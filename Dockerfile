@@ -18,9 +18,3 @@ RUN n $NODE_VERSION && n use $NODE_VERSION && ln -sf /usr/local/bin/node /usr/bi
 RUN apt-get purge -y nodejs npm
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
-RUN bundle install
-
-ADD . /src
-WORKDIR /src
